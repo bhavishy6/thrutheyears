@@ -1,0 +1,112 @@
+ThruTheYears.Us
+
+An online web application to browse popular pop culture references through the years.
+
+Browsable by years.
+
+Topics ranked by how many times it was referenced.
+
+
+Art should reflect the times. in the age of information and fake news, too much gets forgotten. People
+and topics that were once cherished will be forgotten with time. Using this app, people an go back and 
+see which topics and people were the talk of the town during the time. 
+
+1. subject detection in sentence
+
+2. take many sentences and rank subjects by number of references
+
+3. incomplete sentences ie song lyrics
+
+4. tv show scripts
+
+
+
+Current solutions:
+blogs with personal lists of 'biggest moments of the year'
+
+My solution:
+based on the most popular art, what were the actual biggest moments of the year.
+art reflects the times.
+
+art helps us reflect on times past.
+
+
+v0:
+get a dataset of sentences and find similar references.
+rank references by popularity
+
+v1:
+scan lyrics and scripts of popular works.
+
+Future iterations:
+scan social media- it is the new art form. 
+
+
+Libraries to Use:
+SpaCy python library. 
+
+Procedure:
+-Installed SpaCy
+-Get through the course and learn how to use the library.
+
+*********
+pip install -U spacy
+pip install -U spacy-lookups-data
+py -3.8 -m spacy download en_core_web_sm
+*********
+
+
+Things to track in the examples:
+Organizations: ie Google, Facebook, WhatsApp, Instagram, Twitter, NBA, NRA, NATA, 
+Persons: Obama, Trump, Giannis, Lebron James
+Events: New Years, New Years Eve, All Star game, NBA Finals, 
+
+Train the model with these basic labels. Use a lookup later to determine the class
+
+ie>> look up wiki on the organization to see if it is a website.
+ie>> look up wiki on the person to determine if he is a NBA player or a President
+ie>> look up wiki on the website to determine if it is a social media site or not
+ie>> look up a event on wiki to see if it is universal timed thing or a specific timed event. (ie NYE vs all star game)
+
+
+Good reading:
+https://towardsdatascience.com/49-years-of-lyrics-why-so-angry-1adf0a3fa2b4
+https://medium.com/@bored.analytics/predicting-genres-from-song-lyrics-aff6c9f956c0
+https://www.youtube.com/watch?v=cd51nXNpiiU
+
+Resources:
+Use Prodigy to create training data.
+
+A. get references and their popularity of each song (ML using the model)
+---> check each thing it gets is in fact a reference, try to find missing ones. check google trend score for each thing.
+---> see if it matches with actual google trends.
+B. get the mosts popular references (Average) with their popularity for each batch of songs.
+
+C. get references and their popularity of each tv show script/subtitles(ML using the model)
+-->check each thing it gets is in fact a reference, try to find missing ones. get the google trend score of it.
+B. get the mosts popular references (Average) with their popularity for each batch of artworks (tv shows and songs).
+
+
+
+
+Steps:
+0. Figure out popular reference categories to track (People, organizations, Events...)
+0.1: get 2019 billboard song data and lyrics.
+0.2: clean the data.
+0.3: make a model and train it.  --try to nail every reference.
+0.4. create a function get_references() to rank all return all popular references with a popularity score.
+0.4: Get a new song data: run get_references() on the song lyrics and 
+test that model with a brand new song
+1. create training data that is labelled with the above categories
+2. Gather lyrics of most popular songs and keep metadata pristine (ie rank, year, artist, title)
+----> year will be assumed on year of charting. if a song is on multiple years, it will exist in both years.
+3. calculate score of each reference>> references in higher ranked songs will hold more weight
+----> rank of song, number of different references (if high, each reference is less important), number of times this references is made.
+----> for each song calculate each reference score.
+4. Print out weighted reference score for each song.
+5. Print out final yearly results. ie>> in 2019: The most popular references were....1., 2., 3. 
+
+Data:
+Top 100 songs per year.
+reference score of each song.
+average reference score list of each year.
