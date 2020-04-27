@@ -136,3 +136,4 @@ chapter3.py
 secrets.py
 thrutheyears.txt
 *.pdf
+*.pickle
