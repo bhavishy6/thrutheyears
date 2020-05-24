@@ -130,6 +130,9 @@ CONTRACTION_MAP = {
 "you're": "you are",
 "you've": "you have",
 
+"hunnid": "hundred",
+"grinnin'": "grinning",
+"forgivin'": "forgiving",
 "cali": "california",
 "cali'": "california",
 "smokin'": "smoking",
