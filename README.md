@@ -1,10 +1,6 @@
 # Is Art a Good Reflection of its Times?
 
-------
-
 ## By analyzing trends in the lyrics of the top 100 songs of each year since 2006, we can try to chart the fluctuations in popularity of different topics of interest.
-
-------
 
 ### Background
 
@@ -28,7 +24,7 @@ I used SpaCy to prepare and evaluate the tokens in the data. Mainly, for this pr
 
 ### Further Exploration
 
-Indeed, my analysis of popular references in song lyrics is not yet done, however, I have some ideas on where this exploration could continue to. 
+Indeed, my analysis of popular references in song lyrics is not yet complete, however, I have some ideas on where this exploration could continue to. 
 
 With each era in time, I hypothesize that there are resounding themes in music. For example, the themes in the music of the 50s may be different to the themes of the music in the 1960s and 70s when the Apollo Missions were inspiring the nation. Sentiment analysis through time could be graphed along side the economic or cultural movements to see if there is any correlation. 
 
