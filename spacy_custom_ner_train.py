@@ -65,8 +65,6 @@ def main(model=None, new_model_name='new_model', output_dir=None, n_iter=10):
             batches = minibatch(TRAIN_DATA, size=compounding(4., 32., 1.001))
             for batch in batches:
                 texts, annotations = zip(*batch)
-                if(text is None or annotations is None):
-                    print("None:? {} => {} }".format(texts, annotations))
                 nlp.update(texts, annotations, sgd=optimizer, drop=0.35,
                            losses=losses)
             print('Losses', losses)
