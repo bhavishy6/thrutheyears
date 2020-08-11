@@ -25,7 +25,7 @@ eve = Event
 nat = Natural Phenomenon
 """
 # Loading training data 
-with open ('ner_corpus_form', 'rb') as fp:
+with open ('ner_corpus_form.pickle', 'rb') as fp:
     TRAIN_DATA = pickle.load(fp)
 
 # @plac.annotations(
@@ -34,7 +34,7 @@ with open ('ner_corpus_form', 'rb') as fp:
 #     output_dir=("Optional output directory", "option", "o", Path),
 #     n_iter=("Number of training iterations", "option", "n", int))
 
-def main(model=None, new_model_name='new_model', output_dir=None, n_iter=10):
+def main(model=None, new_model_name='new_model', output_dir=None, n_iter=1000):
     """Setting up the pipeline and entity recognizer, and training the new entity."""
     if model is not None:
         nlp = spacy.load(model)  # load existing spacy model

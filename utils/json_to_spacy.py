@@ -11,7 +11,7 @@ import pickle
 import time
 # @plac.annotations(input_file=("Input file", "option", "i", str), output_file=("Output file", "option", "o", str))
 
-def main(input_file="ner_corpus_260.json", output_file="ner_corpus_form"):
+def main(input_file="ner_corpus_260.json", output_file="ner_corpus_form.pickle"):
     try:
         training_data = []
         lines=[]
@@ -31,7 +31,7 @@ def main(input_file="ner_corpus_260.json", output_file="ner_corpus_form"):
                 for label in labels:
                     entities.append((point['start'], point['end'] + 1 ,label))
 
-            if(len(annotation) > 0 and text != ""):
+            if(len(annotation) > 0 and (text and text != "")):
                 training_data.append((text, {"entities" : entities}))
             else:
                 print("!@#!@#: none found {} => {}".format(text, annotation))
